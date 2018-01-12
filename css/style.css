@@ -1,0 +1,57 @@
+body {
+  border: 1px solid white;
+  border-radius: 1.5rem;
+  padding: 1rem;
+  box-sizing: border-box;
+  background: #999999;
+  font-family: Arial;
+  font-size: 20px;
+  color: #cccccc; }
+  body p {
+    line-height: 20px;
+    font-size: 20px;
+    -webkit-transition: font-size 2s;
+    /* Safari */
+    transition: font-size 2s; }
+    body p:hover {
+      font-size: 40px;
+      -webkit-transition: font-size 2s;
+      /* Safari */
+      transition: font-size 2s; }
+  body div {
+    border: 1px solid white;
+    border-radius: 1.5rem;
+    padding: 1rem;
+    box-sizing: border-box;
+    height: 200px;
+    width: 100%; }
+  body .content {
+    font-size: 28px; }
+
+.content-2 {
+  border: 1px solid white;
+  border-radius: 1.5rem;
+  padding: 1rem;
+  box-sizing: border-box; }
+  .content-2 span::before {
+    content: '1: '; }
+  .content-2 q {
+    color: white;
+    transition: color 5s; }
+    .content-2 q:hover {
+      color: #595959;
+      transition: color 5s; }
+  .content-2 div {
+    border: 1px solid white;
+    border-radius: 1.5rem;
+    padding: 1rem;
+    box-sizing: border-box;
+    height: 200px;
+    width: 100%;
+    transition: width 2s linear 1s; }
+    .content-2 div:hover {
+      width: 50%;
+      transition: width 2s ease 1s;
+      transition-delay: 1s; }
+
+/*# sourceMappingURL=style.css.map */

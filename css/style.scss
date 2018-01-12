@@ -1,0 +1,76 @@
+$main-color: black;
+$standard-border: 1px solid;
+$standard-font-size: 20px;
+$font-color: white;
+
+@mixin border-default{
+	border: 1px solid white;
+	border-radius: 1.5rem;
+	padding: 1rem;
+	box-sizing: border-box;
+}
+
+@mixin div-default{
+	@include border-default;	
+	height: 200px;
+	width: 100%;
+}
+
+body {
+	@include border-default;
+	background: lighten($main-color, 60%);
+	font-family: Arial;
+	font-size: $standard-font-size;
+	color: darken($font-color, 20%);
+
+	p{
+		line-height: 20px;
+		font-size: $standard-font-size;
+		-webkit-transition: font-size 2s; /* Safari */
+		transition: font-size 2s;
+
+		&:hover{
+			font-size: $standard-font-size*2;
+			-webkit-transition: font-size 2s; /* Safari */
+    			transition: font-size 2s;
+		}
+	}
+
+
+	div{
+		@include div-default;
+
+		
+	}
+
+	.content{
+		font-size: $standard-font-size*1.4;
+	}
+}
+
+.content-2{
+	@include border-default;
+	span::before{
+		content:'1: ';
+	}
+
+	q{
+		color: $font-color;
+		transition: color 5s;
+		&:hover{
+			color: darken($font-color, 65%);
+			transition: color 5s;
+		}
+	}
+	div{
+		@include div-default;
+		transition: width 2s linear 1s;
+		&:hover{
+			width: 50%;
+			transition: width 2s ease 1s;
+			transition-delay: 1s;
+		}
+	}
+
+}
+

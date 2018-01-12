@@ -1,0 +1,132 @@
+$main-color: navy;
+$secondary-color: lightgray;
+$font-size-default: 18px;
+
+@mixin font-family-default{
+	font-family: 'Sofia';
+}
+
+
+@mixin transition-delay{
+	transition-delay: 0.4s;
+}
+
+@mixin div-default{
+	border: 1px solid $main-color;
+	border-radius: 1.5rem;
+	height: 100px;
+	width: 100%;
+	padding: 1rem;
+	box-sizing: border-box;
+}
+
+@mixin div-image{
+	@include div-default;
+	height: 396px;
+	width: 396px;
+}
+*{
+	color: $main-color;
+	font-size: $font-size-default;
+	@include font-family-default;
+}
+
+div{
+	
+
+}
+
+.section-1{
+	@include div-image;
+
+	transition: width 2s;
+	@include transition-delay;
+
+	&:hover{
+		width: 700px;
+		transition: width 2s;
+		@include transition-delay;
+	}
+
+	img{
+		width: 100%;
+		height: 100%;
+		transition: width 1.5s;
+		@include transition-delay;
+
+		&:hover{
+			width: 100%;
+			transition: width 1.5s;
+			@include transition-delay;
+		}
+	}
+}
+
+
+p{
+	transition: font-size 1.3s;
+	@include transition-delay; 
+	/*transition-delay: color 0.4s, font-size 0.4s;*/
+
+	&:hover{
+
+		transition: font-size 1.3s;
+		font-size: ($font-size-default*3);
+		@include transition-delay;
+		/*transition-delay: color 0.4s, font-size 0.4s;*/
+	}
+}
+
+.main-content{
+
+	margin-bottom: 5rem;
+
+	div{
+		height: auto;
+		width: 32%;
+		float: left;
+		margin:2px;
+		box-sizing: border-box;
+		border: 1px solid $main-color;
+		box-shadow: 1.5px 1.5px 1px 0px $main-color;
+		border-radius: 1rem;
+		opacity: 1;
+		visibility: visible;
+
+		transition: opacity 1.2s linear, visibility 1.2s linear;
+		@include transition-delay;
+
+		&:hover{
+			opacity: 0;
+			visibility: hidden;
+			transition: opacity 1.2s linear, visibility 1.2s linear;
+			@include transition-delay;
+		}
+	}
+}
+
+.item{
+	width: 100%;
+	height: 100%;
+	margin-top: 1rem;
+
+	span{
+		height: 145px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		transition: color .5s, font-size 1s, opacity 1.5s;
+		transition-delay: 0.1s;
+		opacity: 1;
+
+
+		&:hover{
+			color: lighten($main-color, 20%);
+			font-size: $font-size-default/2;
+			opacity: 0;
+			transition: color .5s, font-size 1s, opacity 1.5s;
+			transition-delay: 0.1s;
+		}
+	}
+
+}
